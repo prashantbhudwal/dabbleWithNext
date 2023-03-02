@@ -1,5 +1,6 @@
 "use client";
 import styled from "styled-components";
+import Profile from "./Components/Profile";
 
 const StyledApp = styled.main`
   background-color: #f0f0f0;
@@ -11,5 +12,9 @@ const StyledApp = styled.main`
 `;
 
 export default function Home() {
-  return <StyledApp>dabbleWithNext</StyledApp>;
+  return (
+    <StyledApp>
+      <Profile />
+    </StyledApp>
+  );
 }
