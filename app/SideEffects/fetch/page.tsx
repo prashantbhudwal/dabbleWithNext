@@ -12,23 +12,37 @@ const Container = styled.div`
   gap: 1em;
 `;
 
+interface Data {
+  name: string;
+  height: string;
+  mass: string;
+  hair_color: string;
+}
+
 export default function Fetch() {
   console.log("first line of component");
-  const [isFetched, setIsFetched] = useState(false);
-  const [data, setData] = useState({});
+  const [randomCharacter, setRandomCharacter] = useState(1);
+  const [data, setData] = useState<Data>({
+    name: "Loading...",
+    height: "Loading...",
+    mass: "Loading...",
+    hair_color: "Loading...",
+  });
 
   useEffect(() => {
-    const randomNumber = Math.floor(Math.random() * 10);
-    fetch(`https://swapi.dev/api/people/${randomNumber}`)
+    fetch(`https://swapi.dev/api/people/${randomCharacter}`)
       .then((res) => res.json())
       .then((data) => setData(data));
-  }, [isFetched]);
+  }, [randomCharacter]);
+
+  const getRandomCharacter = () => {
+    const randomNumber = Math.floor(Math.random() * 100);
+    setRandomCharacter(randomNumber);
+  };
 
   return (
     <Container>
-      <button onClick={() => setIsFetched((prevIsFetched) => !prevIsFetched)}>
-        Fetch a Character
-      </button>
+      <button onClick={getRandomCharacter}>Fetch a Character</button>
       <ul>
         <li>Name: {data.name}</li>
         <li>Height: {data.height}</li>
