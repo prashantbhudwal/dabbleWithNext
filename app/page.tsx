@@ -1,10 +1,10 @@
 "use client";
+import Link from "next/link";
 import styled from "styled-components";
 import Profile from "./Components/Profile";
+import SideEffects from "./SideEffects/page";
 
 const StyledApp = styled.main`
-  background-color: #f0f0f0;
-  color: #333;
   font-family: sans-serif;
   font-size: 1.5rem;
   line-height: 1.5;
@@ -14,7 +14,7 @@ const StyledApp = styled.main`
 export default function Home() {
   return (
     <StyledApp>
-      <Profile />
+      <Link href="/SideEffects"> Side Effects </Link>
     </StyledApp>
   );
 }
