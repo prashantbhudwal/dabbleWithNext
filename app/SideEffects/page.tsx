@@ -3,7 +3,12 @@ export default function SideEffects() {
   return (
     <>
       <h1>Learn SideEffects</h1>
-      <Link href="/SideEffects/basics/"> Basics </Link>
+      <div>
+        <Link href="/SideEffects/basics/"> Basics </Link>
+      </div>
+      <div>
+        <Link href="/SideEffects/fetch/"> Fetch </Link>
+      </div>
     </>
   );
 }
