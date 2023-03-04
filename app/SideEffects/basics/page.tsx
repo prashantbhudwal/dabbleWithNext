@@ -8,12 +8,13 @@ export default function Basics() {
 
   useEffect(() => {
     document.title = `Count: ${count} Test:${test}`;
-  });
+  }, [count]);
 
   return (
     <div>
-      <p>Count Value: {count}</p>
-      <p>Test Value:{test}</p>
+      <h1>Compare the values below with the title</h1>
+      <p>Count: {count}</p>
+      <p>Test:{test}</p>
       <button onClick={() => setCount(count + 1)}>Count</button>
       <button onClick={() => setTest(test + 1)}>Test</button>
     </div>
