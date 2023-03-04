@@ -1,4 +1,6 @@
+import Link from "next/link";
 import StyledComponentsRegistry from "./lib/registry";
+import "./global.css";
 
 export const metadata = {
   title: "Test",
@@ -13,7 +15,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <header>dabbleWithNext</header>
+        <main>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </main>
+        <footer>
+          <Link href="/">Go Home</Link>
+        </footer>
       </body>
     </html>
   );
