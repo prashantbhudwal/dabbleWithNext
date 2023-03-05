@@ -9,12 +9,15 @@ const StyledApp = styled.main`
   font-size: 1.5rem;
   line-height: 1.5;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
 `;
 
 export default function Home() {
   return (
     <StyledApp>
       <Link href="/SideEffects"> Side Effects </Link>
+      <Link href="/SWR"> SWR </Link>
     </StyledApp>
   );
 }
