@@ -1,10 +1,7 @@
-async function fetchPerson() {
-  const response = await fetch(`https://swapi.dev/api/people/1`);
-  const data = await response.json();
-  return data;
-}
-
+import { NextRequest, NextResponse } from "next/server";
 export async function GET(request: Request) {
-  const person = await fetchPerson();
-  return new Response(`${person.name}`);
+  const response = await fetch(`https://swapi.dev/api/people/2`);
+  const data = await response.json();
+  const person = await data;
+  return NextResponse.json({ person });
 }
