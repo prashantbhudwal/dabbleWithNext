@@ -18,6 +18,7 @@ export default function Home() {
     <StyledApp>
       <Link href="/SideEffects"> Side Effects </Link>
       <Link href="/SWR"> SWR </Link>
+      <Link href="/DataFetching"> Data Fetching </Link>
     </StyledApp>
   );
 }
