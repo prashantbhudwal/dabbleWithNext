@@ -4,9 +4,7 @@ import useFetch from "./hooks/useFetch";
 
 export default function UseEffect() {
   console.log("🟢 Render");
-  const [url, setUrl] = useState<string>();
-  console.log(url);
-
+  const [url, setUrl] = useState<string>("");
   const { data } = useFetch(url);
 
   const handleClick = function () {

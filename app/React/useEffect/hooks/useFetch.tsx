@@ -7,7 +7,7 @@ export default function useFetch(url: string) {
 
   // Usual way
   useEffect(() => {
-    if (url) {
+    if (url !== "") {
       const fetchPokemon = async function () {
         const response = await fetch(url);
         const jsonData = await response.json();
