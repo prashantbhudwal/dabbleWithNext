@@ -2,10 +2,14 @@
 import { useState } from "react";
 import useFetch from "./useFetch";
 
-export default function UseEffectValue() {
+export default function UseEffectReference() {
   console.log("🟢 Render");
   const [url, setUrl] = useState<string>("");
-  const { data } = useFetch(url);
+
+  //Change url to an object
+
+  const options = { url };
+  const { data } = useFetch(options);
 
   const handleClick = function () {
     const ditto = `https://pokeapi.co/api/v2/pokemon/ditto`;
