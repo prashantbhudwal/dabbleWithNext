@@ -15,7 +15,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header>dabbleWithNext</header>
+        <header>
+          {" "}
+          <Link href="/">dabbleWihNext</Link>
+        </header>
         <main>
           <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
         </main>
