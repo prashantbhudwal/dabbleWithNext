@@ -1,3 +1,10 @@
+"use client";
+import useFetch from "./hooks/useFetch";
+
 export default function UseEffect() {
-  return <>Use Effect</>;
+  console.log("🟢 Render");
+
+  const { data } = useFetch("https://pokeapi.co/api/v2/pokemon/ditto");
+
+  return <>{JSON.stringify(data)}</>;
 }
