@@ -25,7 +25,7 @@ export default function UseEffect() {
       >
         Toggle Pokemon
       </button>
-      {JSON.stringify(data)}
+      {data && JSON.stringify(data)}
     </div>
   );
 }
