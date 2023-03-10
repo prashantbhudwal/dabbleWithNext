@@ -10,7 +10,8 @@ export default function useFetch(url: string) {
     async function fetchPokemon() {
       const response = await fetch(url);
       const jsonData = await response.json();
-      setData(jsonData);
+      const name = jsonData.forms[0].name;
+      setData(name);
     }
     fetchPokemon();
   }, []); // Missing url as a dependency
