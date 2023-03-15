@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 export default function useFetch(options: { url: string }) {
   const [data, setData] = useState(null);
   useEffect(() => {
-    if (options.url !== "") {
+    if (options.url) {
       const fetchPokemon = async function () {
         const response = await fetch(options.url);
         const jsonData = await response.json();
@@ -14,7 +14,7 @@ export default function useFetch(options: { url: string }) {
       };
       fetchPokemon();
     }
-  }, [options.url]);
+  }, [options]);
   return {
     data,
   };
