@@ -2,13 +2,20 @@
 import { useState } from "react";
 export function ReactingToInputChallengeTwo({ status = "empty" }) {
   const [formData, setFormData] = useState({
-    firstName: "Jane",
-    lastName: "Jacobs",
+    firstName: "",
+    lastName: "",
   });
-  const handleEditing = function (e: React.ChangeEvent<HTMLInputElement>) {};
+
+  const handleEditing = function (e: React.ChangeEvent<HTMLInputElement>) {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   const handleClick = function (e: React.MouseEvent<HTMLElement>) {
     e.preventDefault();
+    
   };
 
   return (
@@ -21,14 +28,24 @@ export function ReactingToInputChallengeTwo({ status = "empty" }) {
           First name:
           {status === "saved" && <b>{formData.firstName}</b>}
           {status === "editing" && (
-            <input className="border" onChange={handleEditing} />
+            <input
+              value={formData.firstName}
+              className="border"
+              onChange={handleEditing}
+              name="firstName"
+            />
           )}
         </label>
         <label>
           Last name:
           {status === "saved" && <b>{formData.lastName}</b>}
           {status === "editing" && (
-            <input className="border" onChange={handleEditing} />
+            <input
+              value={formData.lastName}
+              className="border"
+              onChange={handleEditing}
+              name="lastName"
+            />
           )}
         </label>
 
