@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 export default function ReactingToInputChallengeTwo() {
-  const [status, setStatus] = useState("editing");
+  const [isEditing, setIsEditing] = useState(true);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -16,19 +16,19 @@ export default function ReactingToInputChallengeTwo() {
 
   const handleClick = function (e: React.MouseEvent<HTMLElement>) {
     e.preventDefault();
-    setStatus((prevStatus) => (prevStatus === "editing" ? "saved" : "editing"));
+    setIsEditing((prevStatus) => !prevStatus);
   };
 
   return (
     <div className="border border-amber-500 flex flex-col gap-3">
       <div className="bg-zinc-300 w-48 px-4 py-2 text-zinc-500 ml-auto">
-        State: {status}
+        State: {isEditing ? "Editing" : "Saved"}
       </div>
       <form className="flex flex-col gap-1  p-4">
         <label>
           First name:
-          {status === "saved" && <b>{formData.firstName}</b>}
-          {status === "editing" && (
+          {!isEditing && <b>{formData.firstName}</b>}
+          {isEditing && (
             <input
               value={formData.firstName}
               className="border"
@@ -39,8 +39,8 @@ export default function ReactingToInputChallengeTwo() {
         </label>
         <label>
           Last name:
-          {status === "saved" && <b>{formData.lastName}</b>}
-          {status === "editing" && (
+          {!isEditing && <b>{formData.lastName}</b>}
+          {isEditing && (
             <input
               value={formData.lastName}
               className="border"
@@ -55,7 +55,7 @@ export default function ReactingToInputChallengeTwo() {
           type="submit"
           onClick={handleClick}
         >
-          {status === "saved" ? "Edit Profile" : "Save Profile"}
+          {isEditing ? "Save Profile" : "Edit Profile"}
         </button>
 
         <p>
