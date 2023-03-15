@@ -1,5 +1,16 @@
 "use client";
+import { useState } from "react";
 export function ReactingToInputChallengeTwo({ status = "empty" }) {
+  const [formData, setFormData] = useState({
+    firstName: "Jane",
+    lastName: "Jacobs",
+  });
+  const handleEditing = function (e: React.ChangeEvent<HTMLInputElement>) {};
+
+  const handleClick = function (e: React.MouseEvent<HTMLElement>) {
+    e.preventDefault();
+  };
+
   return (
     <div className="border border-amber-500 flex flex-col gap-3">
       <div className="bg-zinc-300 w-48 px-4 py-2 text-zinc-500 ml-auto">
@@ -7,18 +18,32 @@ export function ReactingToInputChallengeTwo({ status = "empty" }) {
       </div>
       <form className="flex flex-col gap-1  p-4">
         <label>
-          First name: <b>Jane</b>
-          <input className="border" />
+          First name:
+          {status === "saved" && <b>{formData.firstName}</b>}
+          {status === "editing" && (
+            <input className="border" onChange={handleEditing} />
+          )}
         </label>
         <label>
-          Last name: <b>Jacobs</b>
-          <input className="border" />
+          Last name:
+          {status === "saved" && <b>{formData.lastName}</b>}
+          {status === "editing" && (
+            <input className="border" onChange={handleEditing} />
+          )}
         </label>
-        <button className="bg-green-600 py-2 px-4 rounded-md" type="submit">
-          Edit Profile
+
+        <button
+          className="bg-green-600 py-2 px-4 rounded-md"
+          type="submit"
+          onClick={handleClick}
+        >
+          {status === "saved" ? "Edit Profile" : "Save Profile"}
         </button>
+
         <p>
-          <i>Hello, Jane Jacobs!</i>
+          <i>
+            Hello, {formData.firstName} {formData.lastName}
+          </i>
         </p>
       </form>
     </div>
@@ -26,10 +51,11 @@ export function ReactingToInputChallengeTwo({ status = "empty" }) {
 }
 
 export default function Storybook() {
-  const componentStates = ["empty", "editing", "saved"];
+  const componentStates = ["editing", "saved"];
 
   return (
     <div className="flex flex-col gap-2">
+      Storybook
       {componentStates.map((state) => (
         <ReactingToInputChallengeTwo status={state} key={state} />
       ))}
