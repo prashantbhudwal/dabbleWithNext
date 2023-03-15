@@ -13,6 +13,7 @@ export default function ReactingToInput() {
     setStatus("submitting");
     try {
       const message = await submitForm(input);
+      //@ts-ignore
       setSuccess(message);
       setStatus("success");
     } catch (err: any) {
@@ -55,6 +56,7 @@ export default function ReactingToInput() {
           {" "}
           Submit
         </button>
+        {/* @ts-ignore */}
         {error != null && <p className="text-red-600">{error.message}</p>}
       </form>
     </div>
