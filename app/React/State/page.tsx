@@ -9,6 +9,9 @@ export default function State() {
         <Link href="/React/State/ReactingToInputChTwo">
           Reacting To Input - Challenge Two
         </Link>
+        <Link href="/React/State/SharingState">
+          Sharing State Between Components
+        </Link>
       </div>
     </>
   );
