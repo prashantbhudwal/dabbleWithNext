@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-export function ReactingToInputChallengeTwo({ status = "empty" }) {
+export default function ReactingToInputChallengeTwo() {
+  const [status, setStatus] = useState("editing");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -15,7 +16,7 @@ export function ReactingToInputChallengeTwo({ status = "empty" }) {
 
   const handleClick = function (e: React.MouseEvent<HTMLElement>) {
     e.preventDefault();
-    
+    setStatus((prevStatus) => (prevStatus === "editing" ? "saved" : "editing"));
   };
 
   return (
@@ -67,15 +68,15 @@ export function ReactingToInputChallengeTwo({ status = "empty" }) {
   );
 }
 
-export default function Storybook() {
-  const componentStates = ["editing", "saved"];
+// export default function Storybook() {
+//   const componentStates = ["editing", "saved"];
 
-  return (
-    <div className="flex flex-col gap-2">
-      Storybook
-      {componentStates.map((state) => (
-        <ReactingToInputChallengeTwo status={state} key={state} />
-      ))}
-    </div>
-  );
-}
+//   return (
+//     <div className="flex flex-col gap-2">
+//       Storybook
+//       {componentStates.map((state) => (
+//         <ReactingToInputChallengeTwo status={state} key={state} />
+//       ))}
+//     </div>
+//   );
+// }
