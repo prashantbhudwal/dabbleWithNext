@@ -3,6 +3,9 @@ export default function React() {
   return (
     <>
       <div>
+        <Link href="/React/State/"> State </Link>
+      </div>
+      <div>
         <Link href="/React/SideEffects/"> Side Effects </Link>
       </div>
       <div>
