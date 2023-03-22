@@ -2,7 +2,7 @@ import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts } from "contentlayer/generated";
 
-function PostCard(post) {
+function PostCard(post: any) {
   return (
     <div className="mb-6">
       <time dateTime={post.date} className="block text-sm text-slate-600">
