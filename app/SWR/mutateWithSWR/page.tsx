@@ -1,6 +1,5 @@
 "use client";
 import useSWR, { mutate } from "swr";
-import { useState, useEffect } from "react";
 import axios from "axios";
 
 const fetchCounter = async (url: string) => {
