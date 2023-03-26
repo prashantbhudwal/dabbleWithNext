@@ -38,7 +38,9 @@ export default function MutateWithoutSWR() {
   return (
     <div className="flex flex-col">
       <div>{count}</div>
-      <button onClick={increaseCount}> Increase Count</button>
+      <div>
+        <button onClick={increaseCount}> Increase Count</button>
+      </div>
     </div>
   );
 }
