@@ -1,6 +1,7 @@
 "use client";
 import useSWR, { mutate } from "swr";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 const fetchCounter = async (url: string) => {
   const response = await fetch(url);
@@ -22,6 +23,17 @@ export default function Counter() {
     mutate({ count: newCount }, false);
 
     // Update the server
+    try {
+      axios.put(
+        "/api/counter",
+        { count: newCount },
+        { headers: { "Content-Type": "application/json" } }
+      );
+      // Update the cache with the latest data from the server
+      mutate();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
