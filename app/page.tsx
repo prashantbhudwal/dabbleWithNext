@@ -24,6 +24,7 @@ export default function Home() {
       <Link href="/React"> Learn React 18</Link>
       <Link href="/SWR"> Learn SWR </Link>
       <Link href="/Next"> Learn NextJs 13 </Link>
+      <Link href="/DnD"> Learn React Drag And Drop </Link>
     </StyledApp>
   );
 }
