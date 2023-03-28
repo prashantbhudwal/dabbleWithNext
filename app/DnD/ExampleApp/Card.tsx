@@ -2,7 +2,7 @@
 import { useDrag } from "react-dnd";
 import { ItemType } from "./types/itemType";
 
-export const Card = ({ prompt, label }) => {
+export const Card = ({ prompt, label }:{prompt: string, label: string}) => {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: ItemType.CARD,
     item: { prompt },
