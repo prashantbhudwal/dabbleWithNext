@@ -29,7 +29,7 @@ export const MainArea = () => {
     }),
   }));
 
-  const moveBlock = (draggedIndex, targetIndex) => {
+  const moveBlock = (draggedIndex: any, targetIndex: any) => {
     const draggedBlock = blocks[draggedIndex];
     const updatedBlocks = [...blocks];
     updatedBlocks.splice(draggedIndex, 1);
