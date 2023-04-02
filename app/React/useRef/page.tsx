@@ -3,7 +3,7 @@ export default function Ref() {
   return (
     <>
       <div>
-        <Link href="/React/useRef/stopWatch/"> Stopwatch </Link>
+        <Link href="/React/useRef/stopwatch/"> Stopwatch </Link>
       </div>
     </>
   );
