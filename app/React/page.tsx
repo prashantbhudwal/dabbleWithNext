@@ -9,7 +9,10 @@ export default function React() {
         <Link href="/React/SideEffects/"> Side Effects </Link>
       </div>
       <div>
-        <Link href="/React/useEffect/"> UseEffect Hook </Link>
+        <Link href="/React/useEffect/"> UseEffect </Link>
+      </div>
+      <div>
+        <Link href="/React/useRef/"> UseRef </Link>
       </div>
     </>
   );
