@@ -4,6 +4,7 @@ export default function Ref() {
     <>
       <div>
         <Link href="/React/useRef/stopwatch/"> Stopwatch </Link>
+        <Link href="/React/useRef/customRef/"> Custom Ref </Link>
       </div>
     </>
   );
