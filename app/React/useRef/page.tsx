@@ -6,6 +6,9 @@ export default function Ref() {
       <Link href="/React/useRef/stopwatch/"> Stopwatch </Link>
       <Link href="/React/useRef/customRef/"> Custom Ref </Link>
       <Link href="/React/useRef/chOne-chat/"> Challenge One - Chat </Link>
+      <Link href="/React/useRef/chTwo-toggle/">
+        Challenge Two - Toggle On/Off
+      </Link>
     </LinkTree>
   );
 }
