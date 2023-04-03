@@ -9,6 +9,9 @@ export default function Ref() {
       <Link href="/React/useRef/chTwo-toggle/">
         Challenge Two - Toggle On/Off
       </Link>
+      <Link href="/React/useRef/chThree-debounce/">
+        Challenge Three - Fix debounce
+      </Link>
     </LinkTree>
   );
 }
