@@ -12,6 +12,9 @@ export default function Ref() {
       <Link href="/React/useRef/chThree-debounce/">
         Challenge Three - Fix debounce
       </Link>
+      <Link href="/React/useRef/chFour-latestState/">
+        Challenge Four - Read the latest state
+      </Link>
     </LinkTree>
   );
 }
