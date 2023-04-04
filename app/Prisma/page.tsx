@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function Prisma() {
   return (
     <LinkTree>
-      <Link href="/Supabase/ExampleOne"> Example One</Link>
-      <Link href="/Supabase/ExampleTwo"> Example Two</Link>
+      <Link href="/Prisma/ReadingData"> Reading Data from database</Link>
+      <Link href="/Prisma/WritingData"> Writing Data to database</Link>
     </LinkTree>
   );
 }
