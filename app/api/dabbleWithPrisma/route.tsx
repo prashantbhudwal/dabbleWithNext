@@ -15,9 +15,7 @@ async function fetchAllUsers(): Promise<User[]> {
 }
 
 export async function GET(request: NextRequest) {
-  console.log("GetRan");
   const fetchedUsers = await fetchAllUsers();
-  console.log(fetchedUsers);
   return NextResponse.json(fetchedUsers);
 }
 
