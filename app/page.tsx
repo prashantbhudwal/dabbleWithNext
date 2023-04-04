@@ -10,6 +10,7 @@ export default function Home() {
       <Link href="/Next"> Learn NextJs 13 </Link>
       <Link href="/DnD"> Learn React Drag And Drop </Link>
       <Link href="/Supabase"> Learn Supabase </Link>
+      <Link href="/Prisma"> Learn Prisma </Link>
     </LinkTree>
   );
 }
