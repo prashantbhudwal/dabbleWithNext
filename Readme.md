@@ -13,3 +13,4 @@ Here I learn and test the features of NextJs and related technologies.
 - Prisma
 - Contentlayer
 - Axios
+- Jotai
