@@ -1,12 +1,11 @@
 import Link from "next/link";
+import LinkTree from "@/app/Components/LinkTree";
+
 export default function DnD() {
   return (
-    <>
-      <h1>Learn React DND</h1>
-      <div className="flex flex-col text-violet-500 underline">
-        <Link href="/DnD/ExampleApp/"> DND Example </Link>
-        <Link href="/DnD/SimpleDND/"> Simple DND</Link>
-      </div>
-    </>
+    <LinkTree>
+      <Link href="/DnD/ExampleApp/"> DND Example </Link>
+      <Link href="/DnD/SimpleDND/"> Simple DND</Link>
+    </LinkTree>
   );
 }
