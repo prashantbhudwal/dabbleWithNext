@@ -5,7 +5,7 @@ type LoginRequestBody = {
   password: string;
 };
 
-export async function Post(request: Request) {
+export async function POST(request: Request) {
   const body: LoginRequestBody = await request.json();
   const { username, password } = body;
 
