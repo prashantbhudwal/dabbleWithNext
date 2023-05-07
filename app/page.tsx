@@ -12,6 +12,7 @@ export default function Home() {
       <Link href="/Supabase"> Supabase </Link>
       <Link href="/Prisma"> Prisma </Link>
       <Link href="/Jotai"> Jotai </Link>
+      <Link href="/NextAuth"> NextAuth </Link>
     </LinkTree>
   );
 }
