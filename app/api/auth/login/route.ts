@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     return new Response(
       JSON.stringify({ message: "Username or password is incorrect" }),
       {
-        status: 400,
+        status: 401,
       }
     );
   }
