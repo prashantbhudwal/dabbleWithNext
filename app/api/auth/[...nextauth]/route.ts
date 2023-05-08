@@ -29,7 +29,7 @@ const handler = NextAuth({
           }
         );
         const user = await res.json();
-        if (user) {
+        if (res.ok && user.email) {
           // Any object returned will be saved in `user` property of the JWT
           return user;
         } else {
