@@ -9,7 +9,11 @@ export async function POST(request: Request) {
   const body: LoginRequestBody = await request.json();
   const { username, password } = body;
 
-  const user = users.find((user) => user.email === username);
+
+  const user = users.find(
+    (user) => user.email === username && user.password === password
+  );
+
 
   if (user && user.password === password) {
     const { password, ...userWithoutPassword } = user;
