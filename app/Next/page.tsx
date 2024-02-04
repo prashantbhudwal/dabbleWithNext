@@ -8,6 +8,7 @@ export default function Next() {
       <Link href="/Next/DataFetching"> Data Fetching </Link>
       <Link href="/Next/Routing">Routing</Link>
       <Link href="/Next/ReadableStreams">Readable Streams</Link>
+      <Link href="/Next/Caching">Caching</Link>
     </LinkTree>
   );
 }
