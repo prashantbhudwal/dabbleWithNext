@@ -2,11 +2,19 @@ import Link from "next/link";
 import StyledComponentsRegistry from "./lib/registry";
 import "./global.css";
 import Providers from "./state/providers";
+import { Inter as FontSans } from "next/font/google";
+import { cn } from "@/lib/utils";
+
 import AuthProvider from "./Providers/AuthProvider";
 export const metadata = {
   title: "Test",
   description: "Test Description",
 };
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export default function RootLayout({
   children,
@@ -15,7 +23,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+      >
         <AuthProvider>
           <Providers>
             <header>
