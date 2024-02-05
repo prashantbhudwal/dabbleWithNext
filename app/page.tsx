@@ -13,6 +13,8 @@ export default function Home() {
       <Link href="/Prisma"> Prisma </Link>
       <Link href="/Jotai"> Jotai </Link>
       <Link href="/NextAuth"> NextAuth </Link>
+      <Link href={"/zustand"}>Zustand</Link>
+      <Link href={"/error-handling"}>Error Handling</Link>
     </LinkTree>
   );
 }
