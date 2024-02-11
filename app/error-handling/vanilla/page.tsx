@@ -1,5 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { cons } from "fp-ts/lib/ReadonlyNonEmptyArray";
+import pRetry from "p-retry";
 import { useState } from "react";
 
 const thirdRiskyOperation = async function (): Promise<number> {
@@ -34,9 +36,10 @@ const secondRiskyOperation = async function (): Promise<string> {
   return "Successfully Executed";
 };
 
-const firstRiskyOperation = function () {
+const firstRiskyOperation = function (number: number) {
+  console.log("attempt number: ", number);
   const randomNumber = Math.random();
-  if (randomNumber > 0.5) {
+  if (randomNumber * number > 0.5) {
     throw new Error("Error at level one.", {
       cause: randomNumber,
     });
@@ -54,12 +57,13 @@ export default function Home() {
     setMessage("");
     setError(null);
     try {
-      firstRiskyOperation();
+      await pRetry((attemptNumber) => firstRiskyOperation(attemptNumber), {
+        retries: 3,
+      });
       const successMessage = await secondRiskyOperation();
       setMessage(successMessage);
       return;
     } catch (error) {
-      console.log(error);
       if (error instanceof Error) setError(error);
       else console.log(error);
     } finally {
