@@ -6,7 +6,7 @@ export default function TS() {
     <LinkTree>
       <Link href="/typescript/generics/basics"> Basics </Link>
       <Link href="/typescript/generics/constraints"> Constraints </Link>
-      <Link href="/typescript/generics/interfaces"> Interfaces </Link>
+      <Link href="/typescript/generics/generic-types"> Interfaces </Link>
       <Link href="/typescript/generics/type-guards"> Type Guards </Link>
     </LinkTree>
   );
