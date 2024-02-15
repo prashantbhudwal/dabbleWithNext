@@ -1,7 +1,7 @@
 import Link from "next/link";
 import StyledComponentsRegistry from "./lib/registry";
 import "./global.css";
-import Providers from "./state/providers";
+import Providers from "./providers";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 
