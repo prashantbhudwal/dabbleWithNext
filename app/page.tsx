@@ -15,6 +15,7 @@ const routes = [
   { name: "Zustand", path: "/zustand" },
   { name: "Error Handling", path: "/error-handling" },
   { name: "CSS", path: "/css" },
+  { name: "Web APIs", path: "/web-apis" },
 ];
 
 export default function Home() {
