@@ -1,9 +1,14 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { createCounter } from "./create-counter-stateful";
+import { symDiff } from "./sym-diff";
+import { at } from "./arrays";
 
 export default function Closures() {
+  symDiff();
+  at();
   const { increment, decrement, count, reset } = createCounter();
+
   return (
     <div>
       <h1>{count}</h1>
