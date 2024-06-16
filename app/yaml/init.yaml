@@ -1,0 +1,68 @@
+# This is a comment
+app: user-authentication
+port: 9000
+version: 1.7
+docker: false
+pnpm: yes
+turborepo: off
+
+# Object
+microservice:
+  app: new-service
+  port: 9000
+  version: 1.7
+  docker: false
+  pnpm: yes
+  turborepo: on
+
+# List
+microservices:
+  - app: user-authentication
+    port: 9000
+    version: 1.7
+    docker: false
+    pnpm: no
+    turborepo: off
+
+# List of primitives
+packageManagers:
+  - pnpm
+  - npm
+  - yarn
+  - bun
+
+# Another way to define list of primitives
+versions: [1.9, 2.1, 3.1] # Works only with primitive values
+names: ["merlin", "raptor", "draco"]
+
+# Multiline string
+multiline: |
+  this is a big string
+  that can be on multiple 
+  lines
+
+# We can write whole files like this
+shellscript: |
+  #!/url/bin/env bash -e
+  sudo apt-get chrome
+  echo"downloaded"
+
+# Yaml ignores the line breaks
+singleLineReadble: >
+  this is just one long line
+  that is broken down for 
+  readability
+
+# Env variable
+command: |
+  pnpm i chrome@${CHROME_VERSION}
+  pnpm build
+  pnpm run dev
+
+# Placeholders: Replaced later using template generators
+metadata:
+  name: { { .Values.service.name } }
+
+## Multiple components
+---
+
